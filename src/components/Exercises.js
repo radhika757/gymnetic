@@ -2,11 +2,27 @@ import React, { useEffect, useState } from "react";
 import { Pagination } from "@mui/material/Pagination";
 import { Box, Stack, Typography } from "@mui/material";
 
-const Exercises = () => {
+// utility funtion
+import { exerciseOptions, fetchData } from "../utility/fetchData";
+const Exercises = ({ exercises, setExercises, bodyPart }) => {
+  console.log(exercises);
   return (
     <>
-      <div>Exercises</div>
-      <h2>Exercises</h2>
+      <Box id="exercises" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
+        <Typography variant="h3" mb="46px">
+          Showing Results
+        </Typography>
+        <Stack
+          direction="row"
+          sx={{ gap: { lg: "110px", xs: "50px" } }}
+          flexWrap="wrap"
+          justifyContent="center"
+        >
+          {exercises.map((exercises, index) => (
+            <p>{exercises.name}</p>
+          ))}
+        </Stack>
+      </Box>
     </>
   );
 };
