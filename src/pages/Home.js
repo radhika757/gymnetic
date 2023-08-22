@@ -7,7 +7,7 @@ const Home = () => {
   // this states are in the home because changes in this state are going to be reflected throughout my application
   const [exercises, setExercises] = useState([]);
   const [bodyPart, setBodyPart] = useState([]);
-
+  console.log(exercises);
   return (
     <Box>
       <HeroBanner />

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Pagination } from "@mui/material/Pagination";
 import { Box, Stack, Typography } from "@mui/material";
-
-// utility funtion
 import { exerciseOptions, fetchData } from "../utility/fetchData";
+import ExerciseCard from "./ExerciseCard";
+
 const Exercises = ({ exercises, setExercises, bodyPart }) => {
   console.log(exercises);
   return (
@@ -18,8 +18,8 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
           flexWrap="wrap"
           justifyContent="center"
         >
-          {exercises.map((exercises, index) => (
-            <p>{exercises.name}</p>
+          {exercises.map((exercise, index) => (
+            <ExerciseCard key={index} exercise={exercise} />
           ))}
         </Stack>
       </Box>
